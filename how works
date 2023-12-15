@@ -1,0 +1,7 @@
+The code attempts to establish a connection to a server specified by server_address and server_port.
+If the connection is successful, the code records the server status as "up" by calling record_server_status(True)
+and prints a message to the console indicating that the server is up (print('Server is UP')).
+  If there is an issue during the connection attempt (e.g., timeout, socket error, or SSL error), the code catches the corresponding exception types (socket.timeout, socket.error, or ssl.SSLError).
+It then records the server status as "down" by calling record_server_status(False).
+The code sends an email alert using send_email_alert(str(e)), where str(e) provides information about the specific error that occurred.
+Finally, it prints a message to the console indicating that the server is down, along with details about the error (print(f'Server is DOWN. Error: {str(e)}')).
